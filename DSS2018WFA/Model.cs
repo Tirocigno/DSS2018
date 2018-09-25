@@ -20,6 +20,7 @@ namespace DSS2018WFA
                 FlushText(this, $"i={i}");
         }
 
+        //sqLiteConnection è la stringa che configura la connesione a un db
         public void readClients(string sqLiteConnString)
         {
             IDbConnection conn = new SQLiteConnection(sqLiteConnString);
