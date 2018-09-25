@@ -20,14 +20,16 @@ namespace DSS2018WFA
         }
         private void viewEventHandler(object sender, string textToWrite)
         { txtConsole.AppendText(textToWrite + Environment.NewLine); }
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            C.doSomething(); // logica applicative }
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnStart_Click_1(object sender, EventArgs e)
+        {
+            C.doSomething(); // logica applicative }
         }
     }
 }

@@ -1,1 +1,9 @@
 c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\bin\Debug\DSS2018WFA.exe.config
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\bin\Debug\DSS2018WFA.exe
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\bin\Debug\DSS2018WFA.pdb
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.csprojResolveAssemblyReference.cache
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.Form1.resources
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.Properties.Resources.resources
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.csproj.GenerateResource.Cache
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.exe
+c:\users\feden\documents\visual studio 2015\Projects\DSS2018WFA\DSS2018WFA\obj\Debug\DSS2018WFA.pdb
