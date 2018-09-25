@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace DSS2018WFA
 {
     class Controller
-    { Writer W = new Writer();
+    { Model M = new Model();
     public delegate void viewEventHandler(object sender, string textToWrite); // questo gestisce l'evento
     public event viewEventHandler FlushText; // questo genera l'evanto
-    public Controller() { W.FlushText += controllerViewEventHandler; }
+    public Controller() { M.FlushText += controllerViewEventHandler; }
     private void controllerViewEventHandler(object sender, string textToWrite)
     { FlushText(this, textToWrite); }
     public void doSomething()
-    { W.doSomathing(); }
+    { M.doSomathing(); }
 }
 }
