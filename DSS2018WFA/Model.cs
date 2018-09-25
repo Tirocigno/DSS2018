@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSS2018WFA
 {
-    class Writer
+    class Model
     {
         public delegate void viewEventHandler(object sender, string textToWrite);
         public viewEventHandler FlushText;
