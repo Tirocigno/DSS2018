@@ -31,5 +31,16 @@ namespace DSS2018WFA
         {
             C.doSomething(); // logica applicative }
         }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            string dbConn = db_path.Text;
+            C.searchClients(dbConn);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

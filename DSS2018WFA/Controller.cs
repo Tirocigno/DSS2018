@@ -16,9 +16,18 @@ namespace DSS2018WFA
     public void doSomething()
     {
             string dbpath = @"C:\Users\feden\Documents\Visual Studio 2015\Projects\DSS2018WFA\testDb.sqlite";
+            Console.WriteLine(dbpath);
             string connString = @"Data Source=" + dbpath + "; Version=3";
             M.doSomathing();
             M.readClients(connString);
     }
+
+    public void searchClients(string dbPath)
+        {
+            Console.WriteLine(dbPath);
+            string connString = @"Data Source=" + dbPath + "; Version=3";
+            M.readClients(connString);
+        }
+    }
 }
-}
+
