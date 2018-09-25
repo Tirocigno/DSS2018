@@ -68,7 +68,6 @@
             this.label1.Size = new System.Drawing.Size(146, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Insert Database configuration";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // search_btn
             // 

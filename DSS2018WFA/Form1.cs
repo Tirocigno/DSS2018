@@ -38,9 +38,5 @@ namespace DSS2018WFA
             C.searchClients(dbConn);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
