@@ -37,9 +37,23 @@ namespace DSS2018WFA
             conn.Close();
         }
 
-        public void launchParametrizedQuery()
+        public void launchParametrizedQuery(string sqLiteConnString, int id)
         {
-
+            IDbConnection conn = new SQLiteConnection(sqLiteConnString);
+            conn.Open();
+            IDbCommand com = conn.CreateCommand();
+            com.CommandText = "select nome from clienti where id=@id";
+            IDbDataParameter param = com.CreateParameter();
+            param.DbType = DbType.Int32;
+            param.ParameterName = "@id";
+            param.Value = id;
+            com.Parameters.Add(param);
+            using (IDataReader dr = com.ExecuteReader())
+            {
+                while (dr.Read()) { FlushText(this, "nome: " + dr["nome"]); }
+                dr.Close();
+            }
+            conn.Close();
         }
     }
 }

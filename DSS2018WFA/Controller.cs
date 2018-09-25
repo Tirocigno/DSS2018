@@ -24,9 +24,14 @@ namespace DSS2018WFA
 
     public void searchClients(string dbPath)
         {
-            Console.WriteLine(dbPath);
             string connString = @"Data Source=" + dbPath + "; Version=3";
             M.readClients(connString);
+        }
+
+    public void searchClientsByID(string dbPath, int idValue)
+        {
+            string connString = @"Data Source=" + dbPath + "; Version=3";
+            M.launchParametrizedQuery(connString, idValue);
         }
     }
 }
