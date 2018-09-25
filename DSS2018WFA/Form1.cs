@@ -12,9 +12,22 @@ namespace DSS2018WFA
 {
     public partial class Form1 : Form
     {
+        Controller C = new Controller();
         public Form1()
         {
             InitializeComponent();
+            C.FlushText += viewEventHandler; // associo il codice all'handler nella applogic
+        }
+        private void viewEventHandler(object sender, string textToWrite)
+        { txtConsole.AppendText(textToWrite + Environment.NewLine); }
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            C.doSomething(); // logica applicative }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
