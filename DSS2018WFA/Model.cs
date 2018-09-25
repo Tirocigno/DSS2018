@@ -36,5 +36,10 @@ namespace DSS2018WFA
             reader.Close();
             conn.Close();
         }
+
+        public void launchParametrizedQuery()
+        {
+
+        }
     }
 }
