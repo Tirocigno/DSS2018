@@ -14,6 +14,11 @@ namespace DSS2018WFA
     private void controllerViewEventHandler(object sender, string textToWrite)
     { FlushText(this, textToWrite); }
     public void doSomething()
-    { M.doSomathing(); }
+    {
+            string dbpath = @"C:\Users\feden\Documents\Visual Studio 2015\Projects\DSS2018WFA\testDb.sqlite";
+            string connString = @"Data Source=" + dbpath + "; Version=3";
+            M.doSomathing();
+            M.readClients(connString);
+    }
 }
 }
