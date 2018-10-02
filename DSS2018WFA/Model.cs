@@ -37,7 +37,7 @@ namespace DSS2018WFA
             conn.Close();
         }
 
-        public void launchParametrizedQuery(string sqLiteConnString, int id)
+        public void launchParametrizedQuery(string sqLiteConnString, string factory, int id)
         {
             IDbConnection conn = new SQLiteConnection(sqLiteConnString);
             conn.Open();

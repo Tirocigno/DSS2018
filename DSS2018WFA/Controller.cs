@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DSS2018WFA
 {
@@ -10,7 +11,34 @@ namespace DSS2018WFA
     { Model M = new Model();
     public delegate void viewEventHandler(object sender, string textToWrite); // questo gestisce l'evento
     public event viewEventHandler FlushText; // questo genera l'evanto
-    public Controller() { M.FlushText += controllerViewEventHandler; }
+
+        public string connString, factory;
+        public Controller()
+        {
+            M.FlushText += controllerViewEventHandler;
+
+            string sdb = ConfigurationManager.AppSettings["dbServer"];
+            switch (sdb)
+            {
+                case "SQLiteConn":
+                    connString =
+                    ConfigurationManager.ConnectionStrings["SQLiteConn"].ConnectionString;
+                    factory = "System.Data.SQLite";
+                    break;
+                case "LocalSqlServConn":
+                    connString =
+                    ConfigurationManager.ConnectionStrings["LocalDbConn"].ConnectionString;
+                    factory = "System.Data.SqlClient";
+                    break;
+
+                default:
+                    connString =
+                    ConfigurationManager.ConnectionStrings["LocalDbConn"].ConnectionString;
+                    factory = "System.Data.SqlClient";
+                    break;
+
+            }
+        }
     private void controllerViewEventHandler(object sender, string textToWrite)
     { FlushText(this, textToWrite); }
     public void doSomething()
@@ -28,10 +56,9 @@ namespace DSS2018WFA
             M.readClients(connString);
         }
 
-    public void searchClientsByID(string dbPath, int idValue)
+    public void searchClientsByID(int idValue)
         {
-            string connString = @"Data Source=" + dbPath + "; Version=3";
-            M.launchParametrizedQuery(connString, idValue);
+            M.launchParametrizedQuery(connString, factory, idValue);
         }
     }
 }

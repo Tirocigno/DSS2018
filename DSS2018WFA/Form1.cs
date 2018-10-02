@@ -41,7 +41,7 @@ namespace DSS2018WFA
         private void btn_id_param_Click(object sender, EventArgs e)
         {
             string dbConn = db_path.Text;
-            C.searchClientsByID(dbConn, Convert.ToInt32(box_id.Text));
+            C.searchClientsByID(Convert.ToInt32(box_id.Text));
         }
     }
 }
