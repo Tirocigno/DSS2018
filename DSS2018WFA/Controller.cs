@@ -60,8 +60,10 @@ namespace DSS2018WFA
 
     public void searchClientsByID(int idValue)
         {
-            M.launchParametrizedQuery(connString, factory, idValue);
+           // M.launchParametrizedQuery(connString, factory, idValue);
+           M.lauchParametrizedQueryTecnologyIndipendent(connString,factory,idValue);
         }
+
     }
 }
 

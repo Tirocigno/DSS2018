@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Data.Common;
+using System.Configuration;
 
 namespace DSS2018WFA
 {
@@ -59,7 +60,37 @@ namespace DSS2018WFA
 
         public void lauchParametrizedQueryTecnologyIndipendent(string connString, string factory, int id)
         {
-
+            DataSet ds = new DataSet();
+            DbProviderFactory dbFactory = DbProviderFactories.GetFactory(factory);
+            using (DbConnection conn = dbFactory.CreateConnection())
+            {
+                try
+                {
+                    conn.ConnectionString = connString;
+                    conn.Open();
+                    DbDataAdapter dbAdapter = dbFactory.CreateDataAdapter();
+                    DbCommand dbCommand = conn.CreateCommand();
+                    dbCommand.CommandText = "select id,nome from clienti where id = @id";
+                    DbParameter param = dbCommand.CreateParameter();
+                    param.DbType = DbType.Int32;
+                    param.ParameterName = "@id";
+                    param.Value = id;
+                    dbCommand.Parameters.Add(param);
+                    dbAdapter.SelectCommand = dbCommand;
+                    dbAdapter.Fill(ds);
+                    ds.Tables[0].TableName = "clienti";
+                    foreach (DataRow dr in ds.Tables["clienti"].Rows)
+                        FlushText(this, dr["nome"].ToString());
+                }
+                catch (Exception ex)
+                {
+                    FlushText(this, "[FillDataSet] Error:" + ex);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open) conn.Close();
+                }
+            }
         }
     }
 }
