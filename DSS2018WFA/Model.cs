@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
+using System.Data.Common;
 
 namespace DSS2018WFA
 {
@@ -54,6 +55,11 @@ namespace DSS2018WFA
                 dr.Close();
             }
             conn.Close();
+        }
+
+        public void lauchParametrizedQueryTecnologyIndipendent(string connString, string factory, int id)
+        {
+
         }
     }
 }

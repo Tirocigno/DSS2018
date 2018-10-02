@@ -21,9 +21,11 @@ namespace DSS2018WFA
             switch (sdb)
             {
                 case "SQLiteConn":
-                    connString =
-                    ConfigurationManager.ConnectionStrings["SQLiteConn"].ConnectionString;
-                    factory = "System.Data.SQLite";
+                    connString = ConfigurationManager.ConnectionStrings["SQLiteConn"].ConnectionString;
+                    factory = ConfigurationManager.ConnectionStrings["SQLiteConn"].ProviderName;
+                    string dbPath = @"C:\Users\feden\Documents\Visual Studio 2015\Projects\DSS2018WFA\testDb.sqlite";
+                    //Qui va fatto un replace
+                    connString = connString.Replace("DBFILE", dbPath);
                     break;
                 case "LocalSqlServConn":
                     connString =
