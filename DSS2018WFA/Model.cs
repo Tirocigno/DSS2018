@@ -92,5 +92,14 @@ namespace DSS2018WFA
                 }
             }
         }
+
+        //NOT WORKING DONT KNOW WHY --> FIXED: Mancava la password nella stringa di connessione al modello.
+        public void callAdoModel() {
+            testDbEntities context = new testDbEntities();
+            foreach(ordini o in context.ordinis)
+            {
+                FlushText(this, o.codice+" "+ o.descr);
+            }
+        }
     }
 }

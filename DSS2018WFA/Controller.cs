@@ -70,6 +70,12 @@ namespace DSS2018WFA
            M.lauchParametrizedQueryTecnologyIndipendent(connString,factory,idValue);
         }
 
+        //Call ado model
+        public void callAdoModel()
+        {
+            M.callAdoModel();
+        }
+
     }
 }
 
