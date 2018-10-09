@@ -109,7 +109,18 @@ namespace DSS2018WFA
                 media += num;
             }
 
-            FlushText(this, "Media: " + media/dati.Count);
+            media = media / dati.Count;
+
+            FlushText(this, "Media: " + media);
+
+            double scarti = 0;
+            foreach (int num in dati)
+            {
+                double scarto = (num - media) * (num - media);
+                scarti += scarto;
+            }
+
+            FlushText(this, "Varianza: " + scarti / dati.Count);
         }
     }
 }
