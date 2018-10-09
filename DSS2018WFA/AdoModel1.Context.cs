@@ -13,6 +13,7 @@ namespace DSS2018WFA
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+    //Database all'interno del codice, si utilizza una sua istanziazione.
     public partial class testDbEntities : DbContext
     {
         public testDbEntities()
@@ -25,6 +26,7 @@ namespace DSS2018WFA
             throw new UnintentionalCodeFirstException();
         }
     
+        //DBSets sono le tables
         public virtual DbSet<clienti> clientis { get; set; }
         public virtual DbSet<ordini> ordinis { get; set; }
     }

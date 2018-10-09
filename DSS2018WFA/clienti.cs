@@ -11,7 +11,7 @@ namespace DSS2018WFA
 {
     using System;
     using System.Collections.Generic;
-    
+    //Dichiarazione effettiva della classe
     public partial class clienti
     {
         public int PK_UID { get; set; }

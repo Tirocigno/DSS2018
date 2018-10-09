@@ -11,7 +11,8 @@ namespace DSS2018WFA
 {
     using System;
     using System.Collections.Generic;
-    
+
+    //Dichiarazione effettiva della classe
     public partial class ordini
     {
         public int PK_UID { get; set; }
