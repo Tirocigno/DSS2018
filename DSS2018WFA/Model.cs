@@ -96,10 +96,20 @@ namespace DSS2018WFA
         //NOT WORKING DONT KNOW WHY --> FIXED: Mancava la password nella stringa di connessione al modello.
         public void callAdoModel() {
             testDbEntities context = new testDbEntities();
+            List<int> dati = new List<int>();
             foreach(ordini o in context.ordinis)
             {
+                dati.Add(Convert.ToInt32(o.codice));
                 FlushText(this, o.codice+" "+ o.descr);
             }
+
+            double media = 0;
+            foreach(int num in dati)
+            {
+                media += num;
+            }
+
+            FlushText(this, "Media: " + media/dati.Count);
         }
     }
 }
