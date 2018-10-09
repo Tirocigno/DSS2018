@@ -33,6 +33,12 @@ namespace DSS2018WFA
                     factory = "System.Data.SqlClient";
                     break;
 
+                case "RemoteSqlServConn":
+                    connString = ConfigurationManager.ConnectionStrings["RemoteSqlServConn"].ConnectionString;
+                    factory = "System.Data.SqlClient";
+                    break;
+
+
                 default:
                     connString =
                     ConfigurationManager.ConnectionStrings["LocalDbConn"].ConnectionString;
